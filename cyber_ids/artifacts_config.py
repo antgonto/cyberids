@@ -3,8 +3,11 @@ from pathlib import Path
 # Base directory of the Django project (folder containing manage.py)
 BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
-# Root folder where notebook saved all artifacts
-ARTIFACTS_ROOT: Path = BASE_DIR / "artifacts"
+# Directory containing this config file (cyber_ids app folder)
+APP_DIR: Path = Path(__file__).resolve().parent
+
+# Root folder where notebook saved all artifacts (inside the cyber_ids app)
+ARTIFACTS_ROOT: Path = APP_DIR / "artifacts"
 
 # Subfolders for different artifact types
 MODELS_DIR: Path = ARTIFACTS_ROOT / "models"
