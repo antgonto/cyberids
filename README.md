@@ -91,7 +91,10 @@ Base URL: `http://127.0.0.1:8000/api/`
 
 ### Interactive API Documentation
 
-Visit `http://127.0.0.1:8000/api/docs` for the Swagger UI documentation.
+Django Ninja provides automatic OpenAPI documentation:
+
+- **Swagger UI**: [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs)
+- **OpenAPI JSON**: [http://127.0.0.1:8000/api/openapi.json](http://127.0.0.1:8000/api/openapi.json)
 
 ### Available Endpoints
 
@@ -101,6 +104,10 @@ Visit `http://127.0.0.1:8000/api/docs` for the Swagger UI documentation.
 | GET | `/api/cyber-ids/ml/model_info` | Get current model version and metadata |
 
 ### Example: Predict Request
+
+The API accepts network flow records with 78 features. The feature names must match those used during training (e.g., `Dst Port`, `Flow Duration`, etc.).
+
+**Note:** The `FlowRecord` schema in `schemas.py` defines a subset of required fields. For full functionality, ensure all 78 features are provided or extend the schema.
 
 ```bash
 curl -X POST http://127.0.0.1:8000/api/cyber-ids/ml/predict \
@@ -140,6 +147,19 @@ curl -X POST http://127.0.0.1:8000/api/cyber-ids/ml/predict \
 
 ```bash
 curl http://127.0.0.1:8000/api/cyber-ids/ml/model_info
+```
+
+### Example: Model Info Response
+
+```json
+{
+  "version": "20251204-040056",
+  "target_column": "Label",
+  "benign_labels": ["Benign"],
+  "feature_count": 78,
+  "train_days": ["14-02-2018", "15-02-2018"],
+  "test_days": ["16-02-2018"]
+}
 ```
 
 ## Project Structure
