@@ -1,0 +1,80 @@
+{
+  "model_version": "20251129-230059",
+  "champion_name": "RandomForest",
+  "trained_at_utc": "2025-11-29T23:00:59.611298",
+  "metrics": {
+    "majority": {
+      "accuracy": 0.998868,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.4997168397312879,
+      "roc_auc": 0.5,
+      "pr_auc": 0.001132,
+      "recall_at_1_fpr": 0.0,
+      "threshold_at_1_fpr": Infinity
+    },
+    "logistic_regression": {
+      "accuracy": 0.978566,
+      "precision": 0.0061301936362751774,
+      "recall": 0.11130742049469965,
+      "f1_macro": 0.500392961005296,
+      "roc_auc": 0.4660435860744186,
+      "pr_auc": 0.0023732476599030564
+    },
+    "random_forest": {
+      "accuracy": 0.998824,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.49970582702629146,
+      "roc_auc": 0.8168144431369101,
+      "pr_auc": 0.01297721869225884
+    },
+    "xgboost": {
+      "accuracy": 0.998848,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.49971183401639346,
+      "roc_auc": 0.5185264542783986,
+      "pr_auc": 0.0014293057312215732
+    },
+    "champion_uncalibrated": {
+      "accuracy": 0.998818,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.49970432525622643,
+      "roc_auc": 0.8160219276348035,
+      "pr_auc": 0.01499056065333354,
+      "brier_score": 0.0012576849877783658
+    },
+    "champion_calibrated": {
+      "accuracy": 0.99875,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.4996873045653533,
+      "roc_auc": 0.8160219276348035,
+      "pr_auc": 0.01499056065333354,
+      "brier_score": 0.001217936889790752,
+      "recall_at_1_fpr": 0.14840989399293286,
+      "threshold_at_1_fpr": 9.789693068497247e-05
+    }
+  },
+  "target_column": "Label",
+  "benign_labels": [
+    "Benign"
+  ],
+  "feature_leakage_columns_dropped": [
+    "Flow ID",
+    "Src IP",
+    "Dst IP",
+    "Timestamp"
+  ],
+  "train_days": [
+    "Friday-03-02-2018",
+    "Wednesday-21-02-2018",
+    "Thursday-22-02-2018"
+  ],
+  "test_days": [
+    "Friday-23-02-2018"
+  ],
+  "max_rows_per_split": 500000
+}

@@ -1,0 +1,80 @@
+{
+  "model_version": "20251204-040056",
+  "champion_name": "RandomForest",
+  "trained_at_utc": "2025-12-04T04:00:56.263788",
+  "metrics": {
+    "majority": {
+      "accuracy": 0.238102,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.19231210352620381,
+      "roc_auc": 0.5,
+      "pr_auc": 0.761898,
+      "recall_at_1_fpr": 0.0,
+      "threshold_at_1_fpr": Infinity
+    },
+    "logistic_regression": {
+      "accuracy": 0.232448,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.1886067404060861,
+      "roc_auc": 0.06847930535822311,
+      "pr_auc": 0.5823819134408635
+    },
+    "random_forest": {
+      "accuracy": 0.238086,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.19230166563550513,
+      "roc_auc": 0.8310229855611663,
+      "pr_auc": 0.9245434612335183
+    },
+    "xgboost": {
+      "accuracy": 0.238078,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.19229644658898712,
+      "roc_auc": 0.6539476766153416,
+      "pr_auc": 0.8406599263889536
+    },
+    "champion_uncalibrated": {
+      "accuracy": 0.23808,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.19229775135693977,
+      "roc_auc": 0.8366800877031477,
+      "pr_auc": 0.9313351343135032,
+      "brier_score": 0.750027696961553
+    },
+    "champion_calibrated": {
+      "accuracy": 0.238072,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_macro": 0.19229253225983625,
+      "roc_auc": 0.8366800877031478,
+      "pr_auc": 0.9313351343135031,
+      "brier_score": 0.761792751892553,
+      "recall_at_1_fpr": 2.6250232970817615e-06,
+      "threshold_at_1_fpr": 0.00040362520270357106
+    }
+  },
+  "target_column": "Label",
+  "benign_labels": [
+    "Benign"
+  ],
+  "feature_leakage_columns_dropped": [
+    "Flow ID",
+    "Src IP",
+    "Dst IP",
+    "Timestamp"
+  ],
+  "train_days": [
+    "Friday-02-03-2018",
+    "Wednesday-21-02-2018",
+    "Thursday-22-02-2018"
+  ],
+  "test_days": [
+    "Wednesday-14-02-2018"
+  ],
+  "max_rows_per_split": 500000
+}
